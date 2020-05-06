@@ -45,7 +45,11 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String login = "";
+        String n = this.nom().toLowerCase().substring(0,6).replaceAll("[a-zA-Z]+","_");
+        String p = this.prenom().toLowerCase().substring(0,1).replaceAll("[^a-zA-Z]+","_");
+        login = n + "_" + p;
+        return login;// à compléter
     }
 
     /**
